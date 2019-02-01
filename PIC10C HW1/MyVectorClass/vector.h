@@ -32,6 +32,7 @@ vector::vector()
 :the_data(nullptr), the_size(0), the_capacity(INIT_CAP)
 {
   the_data = new int[INIT_CAP];
+  std::cout << "xxxxxxxxxx Default constructor called" << "\n";
 }
 
 vector::vector( const vector& source )
@@ -44,6 +45,7 @@ vector::vector( const vector& source )
   {
     the_data[i] = source.the_data[i];
   }
+  std::cout << "xxxxxxxxxx Copy constructor called" << "\n";
 }
 
 vector& vector::operator=(const vector& rhs)
@@ -63,11 +65,13 @@ vector& vector::operator=(const vector& rhs)
       the_data[i] = rhs.the_data[i];
   }
   
+  std::cout << "xxxxxxxxxx Assignment operator called" << "\n";
   return *this;
 }
 
 vector::~vector()
 {
+  std::cout << "xxxxxxxxxx Destructor called" << "\n";
   delete[] the_data;
 }
 

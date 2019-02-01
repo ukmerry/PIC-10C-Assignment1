@@ -7,11 +7,16 @@
 //
 
 #include <iostream>
+#include <fstream>
 #include "vector.h"
 
 int main()
 {
-  // insert code here...
-  std::cout << "Hello, World!\n";
+  //testing big4
+  vector v1;
+  vector v2(v1);
+  vector v3;
+  v3 = v2;
+  
   return 0;
 }
