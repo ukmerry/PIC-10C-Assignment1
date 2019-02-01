@@ -24,6 +24,8 @@ public:
   int& operator[]( size_t index );
   int operator[]( size_t index ) const;
   
+  size_t size() const;
+  
 private:
   int* the_data;
   size_t the_size;
@@ -112,6 +114,11 @@ void vector::reserve( size_t new_capacity )
     
     delete old_location;
   }
+}
+
+size_t vector::size() const
+{
+  return the_size;
 }
 
 #endif /* vector_h */
