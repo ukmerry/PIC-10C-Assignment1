@@ -155,4 +155,10 @@ int vector::at( size_t index ) const
   return the_data[0];
 }
 
+void vector::pop_back()
+{
+  if ( the_size > 0 )
+    --the_size;
+}
+
 #endif /* vector_h */
