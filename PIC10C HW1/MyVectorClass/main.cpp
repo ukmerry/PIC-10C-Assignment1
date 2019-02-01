@@ -12,6 +12,9 @@
 int main()
 {
   vector v1;
+  std::cout << "empty = " << v1.empty() << "\n";
+  std::cout << "CAP = " << v1.capacity() << "\n";
+  
   v1.push_back(1);
   v1.push_back(2);
   v1.push_back(3);
@@ -29,6 +32,9 @@ int main()
     std::cout << v1[i] << " ";
   }
   std::cout << std::endl;
+  std::cout << "Front = " << v1.front() << "\n";
+  std::cout << "Back = " << v1.back() << "\n";
+  std::cout << "CAP = " << v1.capacity() << "\n";
   
   return 0;
 }
