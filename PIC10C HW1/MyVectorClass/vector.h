@@ -52,6 +52,8 @@ private:
   static const int INIT_CAP = 10;
   
   void reserve( size_t new_capacity );
+  double norm(const vector&) const;
+  
 };
 
 vector::vector()
@@ -266,6 +268,11 @@ bool vector::operator!=(const vector & v) const
       return true;
   
   return false;
+}
+
+double vector::norm(const vector& v) const
+{
+  return sqrt(v * v);
 }
 
 #endif /* vector_h */
