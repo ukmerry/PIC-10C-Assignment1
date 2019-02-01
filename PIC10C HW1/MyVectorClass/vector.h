@@ -31,6 +31,7 @@ public:
   int front() const;
   int back() const;
   int at( size_t index ) const;
+  void pop_back();
   
 private:
   int* the_data;

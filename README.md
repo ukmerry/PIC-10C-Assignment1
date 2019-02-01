@@ -10,3 +10,8 @@ New features - big4 prototype (default constructor, copy constructor, assignment
 v1.1(Basic setup)
 New features - big4 definition (tested)
                       - push and [ ] operators protoype
+                      
+v1.2(Basic setup)
+New features - utility function (front ( ), back( ) ,size ( ), capacity( ), at( ), empty( ) )
+                      - adding reserve function in case of not enough spaces availabe in the vector
+                      - adding pop_back( ) prototype
