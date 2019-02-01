@@ -15,3 +15,9 @@ v1.2(Basic setup)
 New features - utility function (front ( ), back( ) ,size ( ), capacity( ), at( ), empty( ) )
                       - adding reserve function in case of not enough spaces availabe in the vector
                       - adding pop_back( ) prototype
+                      
+v1.3(Basic setup)
+New features - adding pop_back( ) definition
+                      - bugs fixed
+                      
+
