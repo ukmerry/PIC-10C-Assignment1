@@ -24,7 +24,13 @@ public:
   int& operator[]( size_t index );
   int operator[]( size_t index ) const;
   
+  //utility functions
   size_t size() const;
+  bool empty() const;
+  size_t capacity() const;
+  int front() const;
+  int back() const;
+  int at( size_t index ) const;
   
 private:
   int* the_data;
@@ -119,6 +125,33 @@ void vector::reserve( size_t new_capacity )
 size_t vector::size() const
 {
   return the_size;
+}
+
+bool vector::empty() const
+{
+  return the_size == 0;
+}
+
+size_t vector::capacity() const
+{
+  return the_capacity;
+}
+
+int vector::front() const
+{
+  return *the_data;
+}
+
+int vector::back() const
+{
+  return *(the_data + the_size - 1);
+}
+
+int vector::at( size_t index ) const
+{
+  if ( index < the_size )
+    return the_data[index];
+  return the_data[0];
 }
 
 #endif /* vector_h */
