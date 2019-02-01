@@ -75,5 +75,23 @@ vector::~vector()
   delete[] the_data;
 }
 
+void vector::push_back( int new_value )
+{
+  if ( the_size == the_capacity )
+    reserve( the_capacity + 1 );     // `the_data` is reassigned
+  
+  the_data[the_size++] = new_value;
+}
+
+int& vector::operator[]( size_t index )
+{
+  return the_data[index];
+}
+
+int vector::operator[]( size_t index ) const
+{
+  return the_data[index];
+}
+
 
 #endif /* vector_h */
