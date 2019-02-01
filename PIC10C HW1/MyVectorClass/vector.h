@@ -33,6 +33,17 @@ public:
   int at( size_t index ) const;
   void pop_back();
   
+  //overloading operators
+  vector operator+(const vector& v) const;
+  void operator+=(const vector& v);
+  int operator*(const vector& v) const;
+  bool operator<(const vector&) const;
+  bool operator>(const vector&) const;
+  bool operator==(const vector&) const;
+  bool operator!=(const vector&) const;
+  bool operator>=(const vector&) const;
+  bool operator<=(const vector&) const;
+  
 private:
   int* the_data;
   size_t the_size;
@@ -159,6 +170,102 @@ void vector::pop_back()
 {
   if ( the_size > 0 )
     --the_size;
+}
+
+int vector::operator*(const vector& v) const
+{
+  int dot_product = 0;
+  if (v.size() == the_size)
+  {
+    for (int i = 0; i < the_size; i++)
+      dot_product += *(the_data + i) * v[i];
+    
+    return dot_product;
+  }
+  else return -1;
+}
+
+vector vector::operator+(const vector& v) const
+{
+  vector output(*this);
+  for (int i = 0; i < v.size(); i++)
+    output[i] += v[i];
+  
+  return output;
+}
+
+void vector::operator+=(const vector& v)
+{
+  for (int i = 0; i < v.size(); i++)
+    *(the_data + i) += v[i];
+}
+
+vector operator*(const vector& v, int scalar)
+{
+  vector output(v);
+  for (int i = 0; i < v.size(); i++)
+    output[i] *= scalar;
+  
+  return output;
+}
+
+vector operator*(int scalar, const vector& v)
+{
+  vector output(v);
+  for (int i = 0; i < v.size(); i++)
+    output[i] *= scalar;
+  
+  return output;
+}
+
+bool vector::operator<(const vector & v) const
+{
+  if (norm(*this) < norm(v))
+    return true;
+  else
+    return false;
+}
+
+bool vector::operator>(const vector & v) const
+{
+  if (norm(*this) > norm(v))
+    return true;
+  else
+    return false;
+}
+
+bool vector::operator<=(const vector & v) const
+{
+  if (norm(*this) <= norm(v))
+    return true;
+  else
+    return false;
+}
+
+bool vector::operator>=(const vector & v) const
+{
+  if (norm(*this) >= norm(v))
+    return true;
+  else
+    return false;
+}
+
+bool vector::operator==(const vector & v) const
+{
+  for (int i = 0; i < the_size; i++)
+    if (*(the_data+i) != v[i])
+      return false;
+  
+  return true;
+}
+
+bool vector::operator!=(const vector & v) const
+{
+  for (int i = 0; i < the_size; i++)
+    if (*(the_data+i) != v[i])
+      return true;
+  
+  return false;
 }
 
 #endif /* vector_h */
