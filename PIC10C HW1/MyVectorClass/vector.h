@@ -20,6 +20,10 @@ public:
   vector& operator=( const vector& );
   ~vector();
   
+  void push_back( int new_value );
+  int& operator[]( size_t index );
+  int operator[]( size_t index ) const;
+  
 private:
   int* the_data;
   size_t the_size;
