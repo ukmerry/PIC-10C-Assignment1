@@ -20,4 +20,8 @@ v1.3(Basic setup)
 New features - adding pop_back( ) definition
                       - bugs fixed
                       
+v2.0(Complete vector class for int)
+New features - ostream
+                      - overloading operator +, *, <, >, <=, >=, ==, !=, +=
+                      
 
