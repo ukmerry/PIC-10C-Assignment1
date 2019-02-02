@@ -275,27 +275,4 @@ double vector::norm(const vector& v) const
   return sqrt(v * v);
 }
 
-std::ostream& operator<<( std::ostream& out, const vector& v )
-{
-  out << "{";
-  for ( size_t i = 0 ; i < v.size() ; ++i)
-  {
-    out << v[i];
-    
-    if (i != v.size()-1)
-      out << ", ";
-  }
-  out << "}";
-  
-  return out;
-}
-
-void print_vector( const vector& v )
-{
-  if ( v.empty() )
-    std::cout << "Vector is empty\n";
-  else
-    std::cout << "Vector (contents): " << v << '\n' ;
-}
-
 #endif /* vector_h */
